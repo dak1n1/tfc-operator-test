@@ -3,11 +3,19 @@ A simple module to test [Terraform Cloud Operator](https://github.com/hashicorp/
 
 ## Description
 
-The following steps exist to assist with local development of the Terraform Cloud Operator. These steps describe how to compile and run the operator in a local Kubernetes cluster ([https://minikube.sigs.k8s.io/docs/](Minikube)).
+The following steps exist to assist with local development of the Terraform Cloud Operator. These steps describe how to compile and run the operator in a local Kubernetes cluster using Minikube.
 
 Once installed, the operator will make API calls to Terraform Cloud, which runs the Terraform module in this repository. The test resource included in this module is created in AWS as a result.
 
 The Workspace custom resource contains all the information Terraform Cloud Operator needs in order to execute this test in AWS.
+
+### Prerequisites
+
+* [Minikube](https://minikube.sigs.k8s.io/docs/)
+* [Helm](https://helm.sh/)
+* [Terraform Cloud](https://app.terraform.io) account (free is fine) with an Organization created.
+* git clone [terraform-helm](https://github.com/hashicorp/terraform-helm)
+* git clone [terraform-k8s](https://github.com/hashicorp/terraform-k8s)
 
 ### Usage
 
