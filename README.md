@@ -14,8 +14,9 @@ The Workspace custom resource contains all the information Terraform Cloud Opera
 * [Minikube](https://minikube.sigs.k8s.io/docs/)
 * [Helm](https://helm.sh/)
 * [Terraform Cloud](https://app.terraform.io) account (free is fine) with an Organization created.
-* git clone [terraform-helm](https://github.com/hashicorp/terraform-helm)
-* git clone [terraform-k8s](https://github.com/hashicorp/terraform-k8s)
+* git clone [terraform-helm](https://github.com/hashicorp/terraform-helm).
+* git clone [terraform-k8s](https://github.com/hashicorp/terraform-k8s).
+* `$HOME/.terraformrc` configured with Terraform Cloud credentials.
 
 ### Usage
 
