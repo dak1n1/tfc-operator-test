@@ -47,7 +47,7 @@ Set up variables used by [terraform-helm](https://github.com/hashicorp/terraform
 ```
 kubectl create ns test
 kubectl create -f example/configmap.yaml -n test
-kubectl create -n test secret generic terraformrc --from-file=credentials=/home/dakini/.terraformrc
+kubectl create -n test secret generic terraformrc --from-file=credentials=${HOME}/.terraformrc
 kubectl create -n test secret generic workspacesecrets \
  --from-literal=AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} \
  --from-literal=AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} \
