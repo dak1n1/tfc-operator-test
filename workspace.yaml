@@ -1,0 +1,53 @@
+---
+apiVersion: app.terraform.io/v1alpha1
+kind: Workspace
+metadata:
+  name: test
+spec:
+#  vcs:
+#    token_id: create token by following this guide https://www.terraform.io/docs/cloud/vcs/
+#    branch: master
+#    repo_identifier: dak1n1/tfc-operator-test
+#  sshKeyID: testkey
+  organization: operator-test # replace with your TFC org
+  secretsMountPath: "/tmp/secrets"
+  module:
+    source: "git::https://github.com/dak1n1/tfc-operator-test.git"
+  variables:
+    - key: testvar
+      value: hello
+      sensitive: false
+      environmentVariable: false
+    - key: some_list
+      value: '["hello", "jello"]'
+      hcl: true
+      sensitive: false
+      environmentVariable: false
+    - key: some_object
+      value: '{hello={name= "test"}}'
+      hcl: true
+      sensitive: false
+      environmentVariable: false
+    - key: AWS_DEFAULT_REGION
+      valueFrom:
+        configMapKeyRef:
+          name: aws-configuration
+          key: region
+      sensitive: false
+      environmentVariable: true
+    - key: AWS_ACCESS_KEY_ID
+      sensitive: true
+      environmentVariable: true
+    - key: AWS_SECRET_ACCESS_KEY
+      sensitive: true
+      environmentVariable: true
+    - key: AWS_SESSION_EXPIRATION
+      sensitive: true
+      environmentVariable: true
+    - key: AWS_SESSION_TOKEN
+      sensitive: true
+      environmentVariable: true
+    - key: CONFIRM_DESTROY
+      value: "1"
+      sensitive: false
+      environmentVariable: true
