@@ -6,7 +6,7 @@ metadata:
 spec:
 #  vcs:
 #    token_id: create token by following this guide https://www.terraform.io/docs/cloud/vcs/
-#    branch: master
+#    branch: main
 #    repo_identifier: dak1n1/tfc-operator-test
 #  sshKeyID: testkey
   organization: operator-test # replace with your TFC org
