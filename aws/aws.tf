@@ -1,4 +1,4 @@
-variable "testvar" {
+variable "some_string" {
   type = string
 }
 
@@ -6,7 +6,7 @@ variable "some_list" {
   type = list(string)
 }
 
-variable "some_objects" {
+variable "some_map" {
   type = list(objects)
 }
 
@@ -19,14 +19,14 @@ resource "aws_ebs_volume" "example" {
   }
 }
 
-output "testvar" {
-  value = var.testvar
+output "some_string" {
+  value = var.some_string
 }
 
 output "some_list" {
   value = var.some_list
 }
 
-output "some_objects" {
-  value = var.some_objects
+output "some_map" {
+  value = var.some_map
 }

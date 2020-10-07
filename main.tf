@@ -13,25 +13,23 @@ provider "aws" {
 
 # These variables are used to test populating terraform
 # variables into TFC from the Workspace CR.
-variable "testvar" {
+variable "some_string" {
   type    = string
   default = "test"
 }
 
 variable "some_list" {
   type    = list(string)
-  default = '["hello", "world"]'
+  default = ["hello", "world"]
 }
 
-variable "some_objects" {
-  type    = list(object)
-  default = [
-    {
-      size = 10
-      type = ssd
-      zone = "us-west-2a"
-    }
-  ]
+variable "some_map" {
+  type    = map
+  default = {
+      "size" = 10
+      "type" = "ssd"
+      "zone" = "us-west-2a"
+  }
 }
 
 module "aws" {
