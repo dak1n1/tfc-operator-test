@@ -13,6 +13,13 @@ spec:
   secretsMountPath: "/tmp/secrets"
   module:
     source: "git::https://github.com/dak1n1/tfc-operator-test.git"
+  outputs:
+    - key: testvar
+      moduleOutputName: testvar
+    - key: some_list
+      moduleOutputName: some_list
+    - key: some_objects
+      moduleOutputName: some_objects
   variables:
     - key: testvar
       value: hello
@@ -23,7 +30,7 @@ spec:
       hcl: true
       sensitive: false
       environmentVariable: false
-    - key: some_object
+    - key: some_objects
       value: '{hello={name= "test"}}'
       hcl: true
       sensitive: false
