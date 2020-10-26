@@ -14,12 +14,8 @@ spec:
   module:
     source: "git::https://github.com/dak1n1/tfc-operator-test.git"
   outputs:
-    - key: some_string
-      moduleOutputName: some_string
-    - key: some_list
-      moduleOutputName: some_list
-    - key: some_map
-      moduleOutputName: some_map
+    - key: aws_ebs_volume_id
+      moduleOutputName: aws_ebs_volume_id
   variables:
     - key: region
       sensitive: false

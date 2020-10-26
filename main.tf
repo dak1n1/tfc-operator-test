@@ -13,6 +13,6 @@ provider "aws" {
 
 module "aws" {
   source = "./aws"
-  zone   = var.some_string
+  zone   = var.zone
   size   = var.size
 }

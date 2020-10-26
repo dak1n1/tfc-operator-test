@@ -6,14 +6,6 @@ resource "aws_ebs_volume" "example" {
   }
 }
 
-output "some_string" {
-  value = var.some_string
-}
-
-output "some_list" {
-  value = var.some_list
-}
-
-output "some_complex" {
-  value = var.some_complex
+output "aws_ebs_volume_id" {
+  value = aws_ebs_volume.example.id
 }
