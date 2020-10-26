@@ -31,7 +31,7 @@ spec:
       sensitive: false
       environmentVariable: false
     - key: some_map
-      value: '{"size"=1,"type"="ssd",zone="us-west-2a"}'
+      value: '{"size"=1,zone="us-west-2a"}'
       hcl: true
       sensitive: false
       environmentVariable: false

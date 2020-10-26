@@ -7,8 +7,10 @@ variable "some_list" {
 }
 
 variable "some_map" {
-  type = list(objects)
-}
+  type = list(object({
+    size = number
+    zone = string
+  }))
 
 resource "aws_ebs_volume" "example" {
   availability_zone = "us-west-2a"
