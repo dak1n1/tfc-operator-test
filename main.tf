@@ -26,15 +26,14 @@ variable "some_list" {
 variable "some_map" {
   type    = map
   default = {
-      "size" = 10
-      "type" = "ssd"
+      "size" = 2
       "zone" = "us-west-2a"
   }
 }
 
 module "aws" {
   source       = "./aws"
-  testvar      = var.testvar
+  some_string  = var.some_string
   some_list    = var.some_list
-  some_objects = var.some_objects
+  some_map     = var.some_map
 }

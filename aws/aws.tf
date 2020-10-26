@@ -14,9 +14,8 @@ variable "some_map" {
 }
 
 resource "aws_ebs_volume" "example" {
-  availability_zone = "us-west-2a"
-  size              = 1
-
+  availability_zone = var.some_map.zone
+  size              = var.some_map.size
   tags = {
     Name = "TFC operator test"
   }
