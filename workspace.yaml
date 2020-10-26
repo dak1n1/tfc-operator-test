@@ -21,18 +21,19 @@ spec:
     - key: some_map
       moduleOutputName: some_map
   variables:
-    - key: some_string
-      value: hello
+    - key: region
       sensitive: false
       environmentVariable: false
-    - key: some_list
-      value: '["hello", "jello"]'
-      hcl: true
+      valueFrom:
+        configMapKeyRef:
+          name: aws-configuration
+          key: region
+    - key: zone
+      value: us-west-2a
       sensitive: false
       environmentVariable: false
-    - key: some_map
-      value: '{"size"=1,zone="us-west-2a"}'
-      hcl: true
+    - key: size
+      value: 1
       sensitive: false
       environmentVariable: false
     - key: AWS_DEFAULT_REGION

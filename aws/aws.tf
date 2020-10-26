@@ -1,23 +1,6 @@
-variable "some_string" {
-  type = string
-}
-
-variable "some_list" {
-  type = list(string)
-}
-
-variable "some_complex" {
-  type = list(object({
-    size = number
-    zone = string
-  }))
-}
-
 resource "aws_ebs_volume" "example" {
-  for_each          = var.some_complex
-
-  availability_zone = each.value.zone
-  size              = each.value.size
+  availability_zone = var.zone
+  size              = var.size
   tags = {
     Name = "TFC operator test"
   }

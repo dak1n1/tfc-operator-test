@@ -8,39 +8,11 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"
-}
-
-# These variables are used to test populating terraform
-# variables into TFC from the Workspace CR.
-variable "some_string" {
-  type    = string
-  default = "test"
-}
-
-variable "some_list" {
-  type    = list(string)
-  default = ["hello", "world"]
-}
-
-variable "some_complex" {
-  type = list(object({
-    size = number
-    zone = string
-  }))
-  default = [{
-      "size" = 2
-      "zone" = "us-west-2a"
-  },
-  {
-      "size" = 1
-      "zone" = "us-west-2a"
-  }]
+  region = var.region
 }
 
 module "aws" {
-  source       = "./aws"
-  some_string  = var.some_string
-  some_list    = var.some_list
-  some_complex = var.some_complex
+  source = "./aws"
+  zone   = var.some_string
+  size   = var.size
 }
