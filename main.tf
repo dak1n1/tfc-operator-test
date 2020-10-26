@@ -23,17 +23,25 @@ variable "some_list" {
   default = ["hello", "world"]
 }
 
-variable "some_map" {
-  type    = map
-  default = {
+variable "some_complex" {
+  type = list(object({
+    size = number
+    zone = string
+  }))
+
+  disks = [{
       "size" = 2
       "zone" = "us-west-2a"
-  }
+  },
+  {
+      "size" = 1
+      "zone" = "us-west-2a"
+  }]
 }
 
 module "aws" {
   source       = "./aws"
   some_string  = var.some_string
   some_list    = var.some_list
-  some_map     = var.some_map
+  some_complex = var.some_complex
 }

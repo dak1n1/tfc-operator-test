@@ -6,7 +6,7 @@ variable "some_list" {
   type = list(string)
 }
 
-variable "some_map" {
+variable "some_complex" {
   type = list(object({
     size = number
     zone = string
@@ -14,8 +14,10 @@ variable "some_map" {
 }
 
 resource "aws_ebs_volume" "example" {
-  availability_zone = var.some_map.zone
-  size              = var.some_map.size
+  for_each          = var.some_complex
+
+  availability_zone = each.zone
+  size              = each.size
   tags = {
     Name = "TFC operator test"
   }
@@ -29,6 +31,6 @@ output "some_list" {
   value = var.some_list
 }
 
-output "some_map" {
-  value = var.some_map
+output "some_complex" {
+  value = var.some_complex
 }
