@@ -28,7 +28,7 @@ variable "some_complex" {
     size = number
     zone = string
   }))
-  [{
+  default = [{
       "size" = 2
       "zone" = "us-west-2a"
   },

@@ -16,8 +16,8 @@ variable "some_complex" {
 resource "aws_ebs_volume" "example" {
   for_each          = var.some_complex
 
-  availability_zone = each.zone
-  size              = each.size
+  availability_zone = each.value.zone
+  size              = each.value.size
   tags = {
     Name = "TFC operator test"
   }
