@@ -11,6 +11,7 @@ variable "some_map" {
     size = number
     zone = string
   }))
+}
 
 resource "aws_ebs_volume" "example" {
   availability_zone = "us-west-2a"
