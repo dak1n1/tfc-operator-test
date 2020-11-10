@@ -16,3 +16,7 @@ module "aws" {
   zone   = var.zone
   size   = var.size
 }
+
+output "aws_ebs_volume_id" {
+  value = module.aws.aws_ebs_volume_id
+}
