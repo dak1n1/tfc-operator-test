@@ -39,18 +39,18 @@ spec:
           key: region
       sensitive: false
       environmentVariable: true
-    - key: AWS_ACCESS_KEY_ID
-      sensitive: true
-      environmentVariable: true
-    - key: AWS_SECRET_ACCESS_KEY
-      sensitive: true
-      environmentVariable: true
-    - key: AWS_SESSION_EXPIRATION
-      sensitive: true
-      environmentVariable: true
-    - key: AWS_SESSION_TOKEN
-      sensitive: true
-      environmentVariable: true
+#    - key: AWS_ACCESS_KEY_ID
+#      sensitive: true
+#      environmentVariable: true
+#    - key: AWS_SECRET_ACCESS_KEY
+#      sensitive: true
+#      environmentVariable: true
+#    - key: AWS_SESSION_EXPIRATION
+#      sensitive: true
+#      environmentVariable: true
+#    - key: AWS_SESSION_TOKEN
+#      sensitive: true
+#      environmentVariable: true
     - key: CONFIRM_DESTROY
       value: "1"
       sensitive: false
